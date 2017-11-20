@@ -1,6 +1,7 @@
 package fileVisitors.driver;
 
 import fileVisitors.util.TreeBuilder;
+import fileVisitors.visitor.PalindromeHighlight;
 import fileVisitors.visitor.PopulateVisitor;
 import fileVisitors.visitor.VisitorI;
 
@@ -25,7 +26,10 @@ public class Driver {
 			TreeBuilder trObj = new TreeBuilder();
 			//VisitorI visitor = new FileVisitorImpl();
 			VisitorI pVistObj = new PopulateVisitor(inputfile);
+			VisitorI palinObj = new PalindromeHighlight();
 			trObj.accept(pVistObj);
+			trObj.accept(palinObj);
+
 		}
 		
 	}
