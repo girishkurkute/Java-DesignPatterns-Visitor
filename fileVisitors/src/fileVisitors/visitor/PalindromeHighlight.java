@@ -9,6 +9,7 @@ public class PalindromeHighlight implements VisitorI{
 	public void visit(TreeBuilder trbObj) throws Exception {
 		// TODO Auto-generated method stub
 		getTreeValues(trbObj.root);
+		System.out.println("PALINDROME------------");
 		print(trbObj.root);
 		
 		
@@ -16,10 +17,11 @@ public class PalindromeHighlight implements VisitorI{
 
 	public void print(Node root) {
 		// TODO Auto-generated method stub
+		
 		if(root != null)
 		{
 			print(root.left);
-			System.out.println(root.word);
+			System.out.println(root.getWord());
 			print(root.right);
 		}
 	
@@ -34,7 +36,7 @@ public class PalindromeHighlight implements VisitorI{
 		if(root != null)
 		{
 			getTreeValues(root.left);
-			tempword = root.word;
+			tempword = root.getWord();
 			length = tempword.length();
 			if(length >3)
 			{
@@ -43,7 +45,7 @@ public class PalindromeHighlight implements VisitorI{
 			if(flag)
 			{
 				tempword = tempword.toUpperCase();
-				root.word = tempword;
+				root.setWord(tempword); 
 			}
 			getTreeValues(root.right);
 		}
