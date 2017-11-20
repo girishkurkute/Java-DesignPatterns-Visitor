@@ -25,6 +25,7 @@ public class TreeBuilder  {
 	 */
 	public TreeBuilder()
 	{
+		MyLogger.writeMessage("TreeBuilder class default constructor is called", MyLogger.DebugLevel.CONSTRUCTOR);
 		root = null;
 		currNode = null;				
 	}

@@ -1,5 +1,6 @@
 package fileVisitors.visitor;
 
+import fileVisitors.util.MyLogger;
 import fileVisitors.util.Node;
 import fileVisitors.util.TreeBuilder;
 
@@ -8,6 +9,7 @@ public class PalindromeHighlight implements VisitorI{
 	@Override
 	public void visit(TreeBuilder trbObj) throws Exception {
 		// TODO Auto-generated method stub
+		MyLogger.writeMessage("visit() gets called in PalindromeHighlight : ", MyLogger.DebugLevel.VISITOR);
 		getTreeValues(trbObj.root);
 		System.out.println("PALINDROME------------");
 		print(trbObj.root);
@@ -44,6 +46,7 @@ public class PalindromeHighlight implements VisitorI{
 			}
 			if(flag)
 			{
+				MyLogger.writeMessage("Palindrome word found : "+ tempword, MyLogger.DebugLevel.PALINDROME_WORD);
 				tempword = tempword.toUpperCase();
 				root.setWord(tempword); 
 			}

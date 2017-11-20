@@ -1,5 +1,6 @@
 package fileVisitors.driver;
 
+import fileVisitors.util.MyLogger;
 import fileVisitors.util.Results;
 import fileVisitors.util.TreeBuilder;
 import fileVisitors.visitor.PalindromeHighlight;
@@ -15,7 +16,7 @@ public class Driver {
 
 		String inputfile = "";
 		String outputfile = "";
-		int debugValue = -1;
+		int debug_Value = -1;
 		if(args.length !=3)
 		{			
 			throw new RuntimeException("Please provide 3 arguments");
@@ -24,8 +25,15 @@ public class Driver {
 		{
 			inputfile = args[0];
 			outputfile = args[1];
-			debugValue = Integer.parseInt(args[2]);
+			debug_Value = Integer.parseInt(args[2]);
 			
+			if(!(debug_Value >=0 && debug_Value <=4))
+			{
+				System.err.println("DEBUG_VALUE must be in range 0 to 4");
+				System.exit(1);
+			}
+			
+			MyLogger.setDebugValue(debug_Value);
 			TreeBuilder trObj = new TreeBuilder();
 			
 			//VisitorI visitor = new FileVisitorImpl();

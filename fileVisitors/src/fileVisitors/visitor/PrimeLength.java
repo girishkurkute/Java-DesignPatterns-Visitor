@@ -1,5 +1,6 @@
 package fileVisitors.visitor;
 
+import fileVisitors.util.MyLogger;
 import fileVisitors.util.Node;
 import fileVisitors.util.TreeBuilder;
 
@@ -8,6 +9,7 @@ public class PrimeLength implements VisitorI{
 	@Override
 	public void visit(TreeBuilder trbObj) throws Exception {
 		// TODO Auto-generated method stub
+		MyLogger.writeMessage("visit() gets called in PrimeLength : ", MyLogger.DebugLevel.VISITOR);
 		getTreeValues(trbObj.root);
 		System.out.println("PRIME LENGTH-----");
 		print(trbObj.root);
@@ -41,6 +43,7 @@ public class PrimeLength implements VisitorI{
 			
 			if(flag)
 			{
+				MyLogger.writeMessage("Word with Prime length : "+ tempword, MyLogger.DebugLevel.PRIME_LENGTH);
 				tempword = root.getWord();
 				tempword = tempword + "-PRIME";
 				root.setWord(tempword); 

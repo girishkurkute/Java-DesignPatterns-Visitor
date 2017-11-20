@@ -3,6 +3,8 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import fileVisitors.util.MyLogger;
+
 public class FileProcessor {
 private Scanner scrObj = null;
 	
@@ -13,6 +15,7 @@ private Scanner scrObj = null;
 	 */
 	public FileProcessor(String inputFile)throws Exception
 	{
+		MyLogger.writeMessage("FileProcessor class paramterized constructor is called", MyLogger.DebugLevel.CONSTRUCTOR);
 		scrObj = new Scanner(new FileReader(inputFile));
 	}
 	

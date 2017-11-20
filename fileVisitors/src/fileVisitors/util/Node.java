@@ -12,7 +12,7 @@ public class Node {
 	  */
 	public Node(String word)
 	{
-		
+		MyLogger.writeMessage("Node class paramterized constructor is called", MyLogger.DebugLevel.CONSTRUCTOR);
 		this.word = word;
 		this.left = null;
 		this.right = null;
