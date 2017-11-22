@@ -12,7 +12,10 @@ public class PrintTree implements VisitorI{
 	public ArrayList<String> originalTreeDataValues = new ArrayList<String>();
 	private String OutputFileName;
 	
-	
+	/**
+	 * constructor to initialize the output file name
+	 * @param outputfile a name of output file
+	 */
 	public PrintTree(String outputfile) {
 		// TODO Auto-generated constructor stub
 		MyLogger.writeMessage("PrintTree class paramterized constructor is called", MyLogger.DebugLevel.CONSTRUCTOR);
@@ -29,7 +32,12 @@ public class PrintTree implements VisitorI{
 		resltObj.writeToFile(originalTreeDataValues);
 	}
 
-	
+	/**
+	 * getTreeValues method used to traverse tree and get node values
+	 * @param root a current node object
+	 * 
+	 * @returns nothing
+	 */
 	public void getTreeValues(Node root) {
 		// TODO Auto-generated method stub
 		
