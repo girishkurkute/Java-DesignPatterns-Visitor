@@ -1,23 +1,35 @@
 package fileVisitors.visitor;
 
+import fileVisitors.util.Helper;
 import fileVisitors.util.MyLogger;
 import fileVisitors.util.Node;
 import fileVisitors.util.TreeBuilder;
 
 public class PalindromeHighlight implements VisitorI{
 
+	private Helper helpObject;
+	
+	/**
+	 * constructor to initialize the Helper object
+	 * @param helpObj 
+	 */
+	public PalindromeHighlight(Helper helpObj) {
+		// TODO Auto-generated constructor stub
+		helpObject = helpObj;
+	}
+
 	@Override
 	public void visit(TreeBuilder trbObj) throws Exception {
 		// TODO Auto-generated method stub
 		MyLogger.writeMessage("visit() gets called in PalindromeHighlight : ", MyLogger.DebugLevel.VISITOR);
 		getTreeValues(trbObj.root);
-		System.out.println("PALINDROME------------");
-		print(trbObj.root);
+		//System.out.println("PALINDROME------------");
+		//print(trbObj.root);
 		
 		
 	}
 
-	public void print(Node root) {
+	/*public void print(Node root) {
 		// TODO Auto-generated method stub
 		
 		if(root != null)
@@ -28,8 +40,14 @@ public class PalindromeHighlight implements VisitorI{
 		}
 	
 		
-	}
+	}*/
 	
+	/**
+	 * getTreeValues method used to traverse tree and get node values
+	 * @param root a current node object
+	 * 
+	 * @returns nothing
+	 */
 	private void getTreeValues(Node root) {
 		// TODO Auto-generated method stub
 		String tempword = "";
@@ -42,7 +60,7 @@ public class PalindromeHighlight implements VisitorI{
 			length = tempword.length();
 			if(length >3)
 			{
-				flag = checkPalindrome(tempword);
+				flag = helpObject.checkPalindrome(tempword);
 			}
 			if(flag)
 			{
@@ -54,17 +72,6 @@ public class PalindromeHighlight implements VisitorI{
 		}
 	}
 
-	private Boolean checkPalindrome(String tempword) {
-		// TODO Auto-generated method stub
-		String strOriginal = tempword;
-		String strReversed = "";
-		int len = -1;
-		len = strOriginal.length();
-		for(int k = len-1;k>=0;k--)
-		{
-			strReversed = strReversed+strOriginal.charAt(k);
-		}
-		return strOriginal.equalsIgnoreCase(strReversed);
-	}
+	
 
 }

@@ -11,6 +11,8 @@ public class PrintTree implements VisitorI{
 
 	public ArrayList<String> originalTreeDataValues = new ArrayList<String>();
 	private String OutputFileName;
+	
+	
 	public PrintTree(String outputfile) {
 		// TODO Auto-generated constructor stub
 		MyLogger.writeMessage("PrintTree class paramterized constructor is called", MyLogger.DebugLevel.CONSTRUCTOR);
@@ -22,18 +24,19 @@ public class PrintTree implements VisitorI{
 		// TODO Auto-generated method stub
 		MyLogger.writeMessage("visit() gets called in PrintTree : ", MyLogger.DebugLevel.VISITOR);
 		Results resltObj = new Results(OutputFileName);
-		System.out.println("Print Tree------");
+		//System.out.println("Print Tree------");
 		getTreeValues(trbObj.root);
 		resltObj.writeToFile(originalTreeDataValues);
 	}
 
+	
 	public void getTreeValues(Node root) {
 		// TODO Auto-generated method stub
 		
 		if(root != null)
 		{
 			getTreeValues(root.left);
-			System.out.println(root.getWord());
+			//System.out.println(root.getWord());
 			originalTreeDataValues.add(root.getWord());
 			getTreeValues(root.right);
 		}

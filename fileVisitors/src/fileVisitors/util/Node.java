@@ -1,5 +1,7 @@
 package fileVisitors.util;
 
+import java.io.FileNotFoundException;
+
 public class Node {
 	 
 	 public String word;
@@ -19,10 +21,20 @@ public class Node {
 
 	}
 	
+	/**
+	 * getWord method used to get word in current node
+	 * 
+	 * @returns String
+	 */
 	public String getWord() {
 		return word;
 	}
 	
+	/**
+	 * setWord method used to set word in current node
+	 * @param word a Stirng need to set
+	 * @returns String
+	 */
 	public void setWord(String word) {
 		this.word = word;
 	}

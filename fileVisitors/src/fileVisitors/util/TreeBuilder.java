@@ -252,6 +252,12 @@ public class TreeBuilder  {
 		}		
 	}
 */
+	/**
+	 * accept method used to invoke visitor
+	 * @param VisitorI 
+	 * @throws Exception
+	 * @returns nothing
+	 */
 	public void accept(VisitorI v) throws Exception {
 		// TODO Auto-generated method stub
 		v.visit(this);

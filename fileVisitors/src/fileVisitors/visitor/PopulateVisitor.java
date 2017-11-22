@@ -9,6 +9,10 @@ public class PopulateVisitor implements VisitorI{
 
 	private String InputFileName;
 	
+	/**
+	 * constructor to initialize the input file name
+	 * @param outputfile a name of input file
+	 */
 	public PopulateVisitor(String inputfile) {
 		// TODO Auto-generated constructor stub
 		MyLogger.writeMessage("PopulateVisitor class paramterized constructor is called", MyLogger.DebugLevel.CONSTRUCTOR);
